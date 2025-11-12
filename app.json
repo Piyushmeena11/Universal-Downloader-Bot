@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+def check_config():
+    print("🔧 Configuration Check")
+    print("=" * 50)
+    
+    # Required variables
+    required_vars = {
+        'BOT_TOKEN': os.getenv('BOT_TOKEN'),
+        'APP_URL': os.getenv('APP_URL'),
+        'LOG_CHANNEL_ID': os.getenv('LOG_CHANNEL_ID')
+    }
+    
+    for var, value in required_vars.items():
+        status = "✅ SET" if value else "❌ MISSING"
+        print(f"{var}: {status}")
+        if value and var == 'BOT_TOKEN':
+            print(f"   Value: {value[:10]}...{value[-10:]}")
+        elif value:
+            print(f"   Value: {value}")
+    
+    print("\nOptional Variables:")
+    optional_vars = ['BOT_USERNAME', 'MAX_FILE_SIZE', 'DOWNLOAD_PATH', 
+                    'MAX_CONCURRENT_DOWNLOADS', 'ADMIN_USER_ID', 'DEBUG_MODE']
+    
+    for var in optional_vars:
+        value = os.getenv(var)
+        status = "✅ SET" if value else "⚠️  DEFAULT"
+        print(f"{var}: {status}")
+        if value:
+            print(f"   Value: {value}")
+
+if __name__ == "__main__":
+    check_config()
