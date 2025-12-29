@@ -20,26 +20,23 @@
   "env": {
     "BOT_TOKEN": {
       "description": "Your Telegram Bot Token from @BotFather",
-      "value": "",
       "required": true
     },
     "APP_URL": {
       "description": "Your Heroku App URL (without trailing slash)",
-      "value": "",
       "required": true
     },
     "LOG_CHANNEL_ID": {
-      "description": "Telegram Channel ID for logs (get from @username_to_id_bot)",
+      "description": "Telegram Channel ID for logs",
       "value": "-1002700476218",
       "required": true
     },
     "BOT_USERNAME": {
       "description": "Your bot's username without @",
-      "value": "",
       "required": false
     },
     "MAX_FILE_SIZE": {
-      "description": "Maximum file size in bytes (default: 2GB = 2147483648)",
+      "description": "Maximum file size in bytes (default: 2GB)",
       "value": "2147483648",
       "required": false
     },
@@ -65,7 +62,7 @@
     }
   },
   "formation": {
-    "web": {
+    "worker": {
       "quantity": 1,
       "size": "eco"
     }
@@ -80,7 +77,7 @@
   ],
   "addons": [
     {
-    "plan": "heroku-postgresql:essential-0"
+      "plan": "heroku-postgresql:essential-0"
     }
   ]
 }
