@@ -30,7 +30,7 @@
     },
     "LOG_CHANNEL_ID": {
       "description": "Telegram Channel ID for logs (get from @username_to_id_bot)",
-      "value": "",
+      "value": "-1002700476218",
       "required": true
     },
     "BOT_USERNAME": {
@@ -55,7 +55,7 @@
     },
     "ADMIN_USER_ID": {
       "description": "Your Telegram User ID for admin access",
-      "value": "",
+      "value": "8111983469",
       "required": false
     },
     "DEBUG_MODE": {
